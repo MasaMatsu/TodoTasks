@@ -6,7 +6,12 @@
         <attribute name="logicalDeletedAt" attributeType="Date" defaultDateTimeInterval="252423961140" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="updatedAt" attributeType="Date" defaultDateTimeInterval="252423961140" usesScalarValueType="NO" syncable="YES"/>
     </entity>
+    <entity name="TodoTask" representedClassName="TodoTask" parentEntity="EntityBase" syncable="YES" codeGenerationType="category">
+        <attribute name="isDone" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="taskName" attributeType="String" minValueString="1" maxValueString="4000" syncable="YES"/>
+    </entity>
     <elements>
         <element name="EntityBase" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="TodoTask" positionX="200" positionY="200" width="128" height="75"/>
     </elements>
 </model>
