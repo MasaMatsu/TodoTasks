@@ -26,4 +26,18 @@ public class EntityBase: NSManagedObject {
             }
         }
     }
+
+    /// Logically delete this record.
+    ///
+    /// Apple does not recommend inheriting NSManagedObjectContext.
+    /// (see "Subclassing Notes" in https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext)
+    /// So I define logically delete in Model.
+    public func delete() {
+        isLogicalDeleted = true
+    }
+
+    /// Physically delete this record.
+    public func deletePhysically(context: NSManagedObjectContext) {
+        context.delete(self)
+    }
 }
