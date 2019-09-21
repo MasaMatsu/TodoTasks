@@ -8,10 +8,12 @@
     </entity>
     <entity name="TodoCategory" representedClassName="TodoCategory" parentEntity="EntityBase" syncable="YES" codeGenerationType="category">
         <attribute name="categoryName" attributeType="String" minValueString="1" maxValueString="4000" syncable="YES"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TodoTask" inverseName="category" inverseEntity="TodoTask" syncable="YES"/>
     </entity>
     <entity name="TodoTask" representedClassName="TodoTask" parentEntity="EntityBase" syncable="YES" codeGenerationType="category">
         <attribute name="isDone" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="taskName" attributeType="String" minValueString="1" maxValueString="4000" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoCategory" inverseName="tasks" inverseEntity="TodoCategory" syncable="YES"/>
     </entity>
     <elements>
         <element name="EntityBase" positionX="0" positionY="0" width="128" height="105"/>
