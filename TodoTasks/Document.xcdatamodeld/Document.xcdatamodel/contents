@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="EntityBase" representedClassName="EntityBase" isAbstract="YES" syncable="YES" codeGenerationType="category">
+        <attribute name="createdAt" attributeType="Date" defaultDateTimeInterval="252423961140" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isLogicalDeleted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="logicalDeletedAt" attributeType="Date" defaultDateTimeInterval="252423961140" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" defaultDateTimeInterval="252423961140" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="EntityBase" positionX="0" positionY="0" width="128" height="105"/>
+    </elements>
 </model>
