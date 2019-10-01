@@ -7,6 +7,19 @@
 
 import Cocoa
 
-extension WindowController {
+extension WindowController: NSToolbarDelegate {
+    func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
+        return [
+            .toggleSidebar,
+        ]
+    }
 
+    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
+        return [
+            .toggleSidebar,
+            .space,
+            .flexibleSpace,
+            .separator,
+        ]
+    }
 }
