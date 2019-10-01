@@ -12,12 +12,13 @@
     </entity>
     <entity name="TodoTask" representedClassName="TodoTask" parentEntity="EntityBase" syncable="YES" codeGenerationType="category">
         <attribute name="isDone" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="limitDate" attributeType="Date" defaultDateTimeInterval="252423961140" usesScalarValueType="NO"/>
         <attribute name="taskName" attributeType="String" minValueString="1" maxValueString="4000"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoCategory" inverseName="tasks" inverseEntity="TodoCategory"/>
     </entity>
     <elements>
         <element name="EntityBase" positionX="0" positionY="0" width="128" height="105"/>
         <element name="TodoCategory" positionX="-200" positionY="200" width="128" height="60"/>
-        <element name="TodoTask" positionX="200" positionY="200" width="128" height="75"/>
+        <element name="TodoTask" positionX="200" positionY="200" width="128" height="103"/>
     </elements>
 </model>
