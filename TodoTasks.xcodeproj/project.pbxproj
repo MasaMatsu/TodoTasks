@@ -17,6 +17,7 @@
 		6983FC582335C2C5004FBF57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6983FC572335C2C5004FBF57 /* Assets.xcassets */; };
 		6983FC5B2335C2C5004FBF57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6983FC592335C2C5004FBF57 /* Main.storyboard */; };
 		69BAE7D323439BC10031B744 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAE7D223439BC10031B744 /* WindowController.swift */; };
+		69BAE7D523439C270031B744 /* WindowController+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAE7D423439C270031B744 /* WindowController+Toolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		6983FC5C2335C2C5004FBF57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6983FC5D2335C2C5004FBF57 /* TodoTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoTasks.entitlements; sourceTree = "<group>"; };
 		69BAE7D223439BC10031B744 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		69BAE7D423439C270031B744 /* WindowController+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WindowController+Toolbar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				6977F8932335EE8D004418FC /* Models */,
 				6983FC4E2335C2C5004FBF57 /* AppDelegate.swift */,
 				69BAE7D223439BC10031B744 /* WindowController.swift */,
+				69BAE7D423439C270031B744 /* WindowController+Toolbar.swift */,
 				6983FC502335C2C5004FBF57 /* SplitViewController.swift */,
 				6983FC522335C2C5004FBF57 /* Document.swift */,
 				6983FC572335C2C5004FBF57 /* Assets.xcassets */,
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69BAE7D523439C270031B744 /* WindowController+Toolbar.swift in Sources */,
 				6977F89E2335EEA3004418FC /* TodoCategory+CoreDataClass.swift in Sources */,
 				6983FC562335C2C5004FBF57 /* Document.xcdatamodeld in Sources */,
 				6983FC512335C2C5004FBF57 /* SplitViewController.swift in Sources */,
