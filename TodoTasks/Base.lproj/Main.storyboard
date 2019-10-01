@@ -707,7 +707,7 @@
             <objects>
                 <splitViewController id="Jw0-Qi-UMc" customClass="SplitViewController" customModule="TodoTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem id="D0Q-tg-yBG"/>
+                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="D0Q-tg-yBG"/>
                         <splitViewItem id="ckY-xz-WOG"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="rqh-lB-ljo">
