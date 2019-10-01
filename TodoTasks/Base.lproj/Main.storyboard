@@ -699,6 +699,9 @@
                             <defaultToolbarItems>
                                 <toolbarItem reference="Aov-lF-Jpo"/>
                             </defaultToolbarItems>
+                            <connections>
+                                <outlet property="delegate" destination="jGA-0Y-lOj" id="034-gt-vjM"/>
+                            </connections>
                         </toolbar>
                         <connections>
                             <outlet property="delegate" destination="jGA-0Y-lOj" id="98r-iN-zZc"/>
