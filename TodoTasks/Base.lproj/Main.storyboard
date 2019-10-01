@@ -874,6 +874,19 @@
                     <view key="view" id="yVK-BL-OeA">
                         <rect key="frame" x="0.0" y="0.0" width="280" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="OAT-eD-f9n">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="U4o-Wx-XeM"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OAT-eD-f9n" secondAttribute="bottom" id="1bD-bY-5m2"/>
+                            <constraint firstAttribute="trailing" secondItem="OAT-eD-f9n" secondAttribute="trailing" id="bd5-hd-0ZP"/>
+                            <constraint firstItem="OAT-eD-f9n" firstAttribute="leading" secondItem="yVK-BL-OeA" secondAttribute="leading" id="kSB-LW-H8K"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="s2S-Tt-CGT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
