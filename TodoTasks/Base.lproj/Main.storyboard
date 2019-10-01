@@ -877,8 +877,31 @@
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="OAT-eD-f9n">
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nrn-Lm-4LS">
+                                        <rect key="frame" x="14" y="2" width="47" height="32"/>
+                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qqc-JS-vk5">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rFn-JJ-Q0X">
+                                        <rect key="frame" x="61" y="2" width="47" height="32"/>
+                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2RN-GY-mvd">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="rFn-JJ-Q0X" firstAttribute="width" secondItem="Nrn-Lm-4LS" secondAttribute="width" id="DPW-tf-36G"/>
+                                    <constraint firstItem="Nrn-Lm-4LS" firstAttribute="top" secondItem="OAT-eD-f9n" secondAttribute="top" constant="10" id="Eze-AA-XbC"/>
+                                    <constraint firstItem="rFn-JJ-Q0X" firstAttribute="leading" secondItem="Nrn-Lm-4LS" secondAttribute="trailing" constant="12" id="TLZ-i1-Mvb"/>
                                     <constraint firstAttribute="height" constant="40" id="U4o-Wx-XeM"/>
+                                    <constraint firstAttribute="bottom" secondItem="rFn-JJ-Q0X" secondAttribute="bottom" constant="9" id="f4d-Lb-Oox"/>
+                                    <constraint firstItem="rFn-JJ-Q0X" firstAttribute="top" secondItem="OAT-eD-f9n" secondAttribute="top" constant="10" id="gHK-Tf-sWw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nrn-Lm-4LS" secondAttribute="bottom" constant="9" id="oih-DP-js9"/>
+                                    <constraint firstItem="Nrn-Lm-4LS" firstAttribute="leading" secondItem="OAT-eD-f9n" secondAttribute="leading" constant="20" id="vnb-ia-go4"/>
                                 </constraints>
                             </customView>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LK-tb-u98">
@@ -996,6 +1019,8 @@
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
         <image name="NSTouchBarAddDetailTemplate" width="18" height="30"/>
     </resources>
 </document>
