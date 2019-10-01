@@ -705,7 +705,7 @@
         <!--Split View Controller-->
         <scene sceneID="w1S-JU-M0w">
             <objects>
-                <splitViewController id="Jw0-Qi-UMc" sceneMemberID="viewController">
+                <splitViewController id="Jw0-Qi-UMc" customClass="SplitViewController" customModule="TodoTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="D0Q-tg-yBG"/>
                         <splitViewItem id="ckY-xz-WOG"/>
