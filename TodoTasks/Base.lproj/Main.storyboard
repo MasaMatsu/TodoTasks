@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -693,10 +694,64 @@
                             <outlet property="delegate" destination="jGA-0Y-lOj" id="98r-iN-zZc"/>
                         </connections>
                     </window>
+                    <connections>
+                        <segue destination="Jw0-Qi-UMc" kind="relationship" relationship="window.shadowedContentViewController" id="jzp-aw-e0f"/>
+                    </connections>
                 </windowController>
                 <customObject id="6f7-a7-6o1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="w1S-JU-M0w">
+            <objects>
+                <splitViewController id="Jw0-Qi-UMc" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="D0Q-tg-yBG"/>
+                        <splitViewItem id="ckY-xz-WOG"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="rqh-lB-ljo">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="Jw0-Qi-UMc" id="uGM-1M-OiL"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="rqh-lB-ljo" id="JGI-eM-Muc"/>
+                        <segue destination="De4-jW-V9v" kind="relationship" relationship="splitItems" id="zoW-jt-zte"/>
+                        <segue destination="rzT-5J-BTW" kind="relationship" relationship="splitItems" id="Kmd-r0-y8e"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="s4m-3R-UcS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="680"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QZb-oe-2b1">
+            <objects>
+                <viewController id="De4-jW-V9v" sceneMemberID="viewController">
+                    <view key="view" id="7hc-sk-YdJ">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="zMY-fA-ows" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="494"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GyP-EB-qRa">
+            <objects>
+                <viewController id="rzT-5J-BTW" sceneMemberID="viewController">
+                    <view key="view" id="yVK-BL-OeA">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="s2S-Tt-CGT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="866"/>
         </scene>
     </scenes>
 </document>
