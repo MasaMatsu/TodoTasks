@@ -7,12 +7,13 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class SplitViewController: NSSplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Maximum Sidebar width.
+        splitViewItems[0].maximumThickness = 300
     }
 
     override var representedObject: Any? {
