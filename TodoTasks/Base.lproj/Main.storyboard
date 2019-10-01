@@ -750,8 +750,21 @@
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="QDZ-qT-9U9">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TyX-fn-sgg">
+                                        <rect key="frame" x="10" y="9" width="106" height="21"/>
+                                        <buttonCell key="cell" type="bevel" title="Add Category" bezelStyle="rounded" image="NSTouchBarAddDetailTemplate" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="Bd7-NJ-jTH">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="TyX-fn-sgg" firstAttribute="top" secondItem="QDZ-qT-9U9" secondAttribute="top" constant="10" id="1pn-oJ-eUa"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TyX-fn-sgg" secondAttribute="trailing" constant="20" symbolic="YES" id="4Ko-J9-owf"/>
+                                    <constraint firstItem="TyX-fn-sgg" firstAttribute="leading" secondItem="QDZ-qT-9U9" secondAttribute="leading" constant="10" id="VWQ-Qi-ler"/>
                                     <constraint firstAttribute="height" constant="40" id="q7T-Op-kOx"/>
+                                    <constraint firstAttribute="bottom" secondItem="TyX-fn-sgg" secondAttribute="bottom" constant="9" id="sFO-90-amz"/>
                                 </constraints>
                             </customView>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPK-K1-cHQ">
@@ -870,5 +883,6 @@
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSTouchBarAddDetailTemplate" width="18" height="30"/>
     </resources>
 </document>
