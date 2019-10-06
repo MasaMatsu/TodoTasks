@@ -54,7 +54,7 @@ public class EntityBase: NSManagedObject {
     }
 
     /// Physically delete this record.
-    public func deletePhysically(context: NSManagedObjectContext) {
-        context.delete(self)
+    public func deletePhysically() {
+        managedObjectContext?.delete(self)
     }
 }
