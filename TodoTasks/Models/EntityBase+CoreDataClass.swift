@@ -14,16 +14,24 @@ public class EntityBase: NSManagedObject {
     public override func willSave() {
         super.willSave()
 
-        // FIXME: This logic makes infinity loop.
         let now = Date()
         if isInserted {
-            createdAt = now
-            updatedAt = now
+            if createdAt == nil {
+                createdAt = now
+            }
+            if updatedAt == nil {
+                updatedAt = now
+            }
         }
         else if isUpdated {
-            updatedAt = now
+            if updatedAt == nil || now.timeIntervalSince(updatedAt!) > 1.0 {
+                updatedAt = now
+            }
+
             if isLogicalDeleted {
-                logicalDeletedAt = now
+                if logicalDeletedAt == nil {
+                    logicalDeletedAt = now
+                }
             }
         }
     }
