@@ -58,6 +58,18 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		693B74AF2349980F001FFB29 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6983FC572335C2C5004FBF57 /* Assets.xcassets */,
+				6983FC592335C2C5004FBF57 /* Main.storyboard */,
+				6983FC5C2335C2C5004FBF57 /* Info.plist */,
+				6983FC5D2335C2C5004FBF57 /* TodoTasks.entitlements */,
+				6983FC542335C2C5004FBF57 /* Document.xcdatamodeld */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		6977F8932335EE8D004418FC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,11 +103,7 @@
 				6977F8932335EE8D004418FC /* Models */,
 				6983FC4E2335C2C5004FBF57 /* AppDelegate.swift */,
 				6983FC522335C2C5004FBF57 /* Document.swift */,
-				6983FC572335C2C5004FBF57 /* Assets.xcassets */,
-				6983FC592335C2C5004FBF57 /* Main.storyboard */,
-				6983FC5C2335C2C5004FBF57 /* Info.plist */,
-				6983FC5D2335C2C5004FBF57 /* TodoTasks.entitlements */,
-				6983FC542335C2C5004FBF57 /* Document.xcdatamodeld */,
+				693B74AF2349980F001FFB29 /* Resources */,
 			);
 			path = TodoTasks;
 			sourceTree = "<group>";
