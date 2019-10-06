@@ -23,6 +23,7 @@ class Document: NSPersistentDocument {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
         self.addWindowController(windowController)
+        windowController.contentViewController?.representedObject = windowController.document
     }
 
 }
