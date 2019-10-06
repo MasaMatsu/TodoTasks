@@ -740,10 +740,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="680"/>
         </scene>
-        <!--View Controller-->
+        <!--Sidebar View Controller-->
         <scene sceneID="QZb-oe-2b1">
             <objects>
-                <viewController id="De4-jW-V9v" sceneMemberID="viewController">
+                <viewController id="De4-jW-V9v" customClass="SidebarViewController" customModule="TodoTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="7hc-sk-YdJ">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
