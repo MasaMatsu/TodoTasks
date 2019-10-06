@@ -12,8 +12,6 @@ import CoreData
 public class EntityBase: NSManagedObject {
 
     public override func willSave() {
-        super.willSave()
-
         let now = Date()
         if isInserted {
             if createdAt == nil {
@@ -42,6 +40,8 @@ public class EntityBase: NSManagedObject {
                 DebugLog.write(obj: "Unset logicalDeletedAt")
             }
         }
+
+        super.willSave()
     }
 
     /// Logically delete this record.
