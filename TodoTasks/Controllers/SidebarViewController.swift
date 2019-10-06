@@ -19,7 +19,7 @@ class SidebarViewController: NSViewController {
     }
 
     private func tmpSaveTest() {
-        let context = (representedObject as! Document).managedObjectContext!
+        let context = (representedObject as! Document).childManagedObjectContext!
         let category = TodoCategory(context: context)
         category.categoryName = "Test Category"
         do {
