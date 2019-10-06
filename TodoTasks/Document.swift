@@ -21,6 +21,21 @@ class Document: NSPersistentDocument {
         return true
     }
 
+    override func configurePersistentStoreCoordinator(
+        for url: URL,
+        ofType fileType: String,
+        modelConfiguration configuration: String?,
+        storeOptions: [String : Any]? = nil
+    ) throws {
+        let options = [NSSQLitePragmasOption: ["journal_mode" : "DELETE"]]
+        return try super.configurePersistentStoreCoordinator(
+            for: url,
+            ofType: fileType,
+            modelConfiguration: configuration,
+            storeOptions: options
+        )
+    }
+
     var childManagedObjectContext: NSManagedObjectContext? {
         if let ctx = managedObjectContext {
             let child = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
