@@ -18,6 +18,15 @@ class Document: NSPersistentDocument {
         return true
     }
 
+    var childManagedObjectContext: NSManagedObjectContext? {
+        if let ctx = managedObjectContext {
+            let child = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+            child.parent = ctx
+            return child
+        }
+        return nil
+    }
+
     override func makeWindowControllers() {
         // Returns the Storyboard that contains your Document window.
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
