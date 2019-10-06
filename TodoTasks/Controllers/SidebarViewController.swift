@@ -14,4 +14,6 @@ class SidebarViewController: NSViewController {
         // Do view setup here.
     }
 
+    @IBAction func ButtonToAddCategory(_ sender: Any) {
+    }
 }
