@@ -18,25 +18,30 @@ public class EntityBase: NSManagedObject {
         if isInserted {
             if createdAt == nil {
                 createdAt = now
+                DebugLog.write(obj: "Set createdAt at inserted")
             }
             if updatedAt == nil {
                 updatedAt = now
+                DebugLog.write(obj: "Set updatedAt at inserted")
             }
         }
         else if isUpdated {
             if updatedAt == nil || now.timeIntervalSince(updatedAt!) > 1.0 {
                 updatedAt = now
+                DebugLog.write(obj: "Set updatedAt at updated")
             }
         }
 
         if isLogicalDeleted {
             if logicalDeletedAt == nil {
                 logicalDeletedAt = now
+                DebugLog.write(obj: "Set logicalDeletedAt")
             }
         }
         else {
             if logicalDeletedAt != nil {
                 logicalDeletedAt = nil
+                DebugLog.write(obj: "Unset logicalDeletedAt")
             }
         }
     }
