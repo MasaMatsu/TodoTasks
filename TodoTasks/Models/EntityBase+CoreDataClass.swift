@@ -12,19 +12,36 @@ import CoreData
 public class EntityBase: NSManagedObject {
 
     public override func willSave() {
-        super.willSave()
-
         let now = Date()
         if isInserted {
-            createdAt = now
-            updatedAt = now
-        }
-        else if isUpdated {
-            updatedAt = now
-            if isLogicalDeleted {
-                logicalDeletedAt = now
+            if createdAt == nil {
+                setPrimitiveValue(now, forKey: #keyPath(createdAt))
+                DebugLog.write(obj: "Set createdAt at inserted")
+            }
+            if updatedAt == nil {
+                setPrimitiveValue(now, forKey: #keyPath(updatedAt))
+                DebugLog.write(obj: "Set updatedAt at inserted")
             }
         }
+        else if isUpdated {
+            setPrimitiveValue(now, forKey: #keyPath(updatedAt))
+            DebugLog.write(obj: "Set updatedAt at updated")
+        }
+
+        if primitiveValue(forKey: #keyPath(isLogicalDeleted)) as! Bool {
+            if logicalDeletedAt == nil {
+                setPrimitiveValue(now, forKey: #keyPath(logicalDeletedAt))
+                DebugLog.write(obj: "Set logicalDeletedAt")
+            }
+        }
+        else {
+            if logicalDeletedAt != nil {
+                setPrimitiveValue(nil, forKey: #keyPath(logicalDeletedAt))
+                DebugLog.write(obj: "Unset logicalDeletedAt")
+            }
+        }
+
+        super.willSave()
     }
 
     /// Logically delete this record.
@@ -37,7 +54,7 @@ public class EntityBase: NSManagedObject {
     }
 
     /// Physically delete this record.
-    public func deletePhysically(context: NSManagedObjectContext) {
-        context.delete(self)
+    public func deletePhysically() {
+        managedObjectContext?.delete(self)
     }
 }

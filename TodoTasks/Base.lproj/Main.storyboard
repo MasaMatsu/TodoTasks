@@ -740,10 +740,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="680"/>
         </scene>
-        <!--View Controller-->
+        <!--Sidebar View Controller-->
         <scene sceneID="QZb-oe-2b1">
             <objects>
-                <viewController id="De4-jW-V9v" sceneMemberID="viewController">
+                <viewController id="De4-jW-V9v" customClass="SidebarViewController" customModule="TodoTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="7hc-sk-YdJ">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -757,6 +757,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="ButtonToAddCategory:" target="De4-jW-V9v" id="pTj-Bk-zGa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -867,10 +870,10 @@
             </objects>
             <point key="canvasLocation" x="745" y="494"/>
         </scene>
-        <!--View Controller-->
+        <!--Content View Controller-->
         <scene sceneID="GyP-EB-qRa">
             <objects>
-                <viewController id="rzT-5J-BTW" sceneMemberID="viewController">
+                <viewController id="rzT-5J-BTW" customClass="ContentViewController" customModule="TodoTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yVK-BL-OeA">
                         <rect key="frame" x="0.0" y="0.0" width="280" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
