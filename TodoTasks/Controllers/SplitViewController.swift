@@ -18,7 +18,9 @@ class SplitViewController: NSSplitViewController {
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            for vc in splitViewItems.map({$0.viewController}) {
+                vc.representedObject = representedObject
+            }
         }
     }
 
