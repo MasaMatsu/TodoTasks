@@ -48,6 +48,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		693B74AE23499014001FFB29 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				69BAE7D223439BC10031B744 /* WindowController.swift */,
+				69BAE7D423439C270031B744 /* WindowController+Toolbar.swift */,
+				6983FC502335C2C5004FBF57 /* SplitViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		6977F8932335EE8D004418FC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +87,9 @@
 		6983FC4D2335C2C5004FBF57 /* TodoTasks */ = {
 			isa = PBXGroup;
 			children = (
+				693B74AE23499014001FFB29 /* Controllers */,
 				6977F8932335EE8D004418FC /* Models */,
 				6983FC4E2335C2C5004FBF57 /* AppDelegate.swift */,
-				69BAE7D223439BC10031B744 /* WindowController.swift */,
-				69BAE7D423439C270031B744 /* WindowController+Toolbar.swift */,
-				6983FC502335C2C5004FBF57 /* SplitViewController.swift */,
 				6983FC522335C2C5004FBF57 /* Document.swift */,
 				6983FC572335C2C5004FBF57 /* Assets.xcassets */,
 				6983FC592335C2C5004FBF57 /* Main.storyboard */,
