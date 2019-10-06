@@ -14,6 +14,7 @@ public class EntityBase: NSManagedObject {
     public override func willSave() {
         super.willSave()
 
+        // FIXME: This logic makes infinity loop.
         let now = Date()
         if isInserted {
             createdAt = now
