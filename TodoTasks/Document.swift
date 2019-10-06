@@ -11,7 +11,10 @@ class Document: NSPersistentDocument {
 
     override init() {
         super.init()
-        // Add your subclass-specific initialization here.
+
+        let ctx = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        ctx.persistentStoreCoordinator = managedObjectContext?.persistentStoreCoordinator
+        managedObjectContext = ctx
     }
 
     override class var autosavesInPlace: Bool {
