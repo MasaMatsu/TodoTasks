@@ -17,30 +17,28 @@ public class EntityBase: NSManagedObject {
         let now = Date()
         if isInserted {
             if createdAt == nil {
-                createdAt = now
+                setPrimitiveValue(now, forKey: #keyPath(createdAt))
                 DebugLog.write(obj: "Set createdAt at inserted")
             }
             if updatedAt == nil {
-                updatedAt = now
+                setPrimitiveValue(now, forKey: #keyPath(updatedAt))
                 DebugLog.write(obj: "Set updatedAt at inserted")
             }
         }
         else if isUpdated {
-            if updatedAt == nil || now.timeIntervalSince(updatedAt!) > 1.0 {
-                updatedAt = now
-                DebugLog.write(obj: "Set updatedAt at updated")
-            }
+            setPrimitiveValue(now, forKey: #keyPath(updatedAt))
+            DebugLog.write(obj: "Set updatedAt at updated")
         }
 
-        if isLogicalDeleted {
+        if primitiveValue(forKey: #keyPath(isLogicalDeleted)) as! Bool {
             if logicalDeletedAt == nil {
-                logicalDeletedAt = now
+                setPrimitiveValue(now, forKey: #keyPath(logicalDeletedAt))
                 DebugLog.write(obj: "Set logicalDeletedAt")
             }
         }
         else {
             if logicalDeletedAt != nil {
-                logicalDeletedAt = nil
+                setPrimitiveValue(nil, forKey: #keyPath(logicalDeletedAt))
                 DebugLog.write(obj: "Unset logicalDeletedAt")
             }
         }
