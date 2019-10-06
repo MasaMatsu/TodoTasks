@@ -27,16 +27,16 @@ public class EntityBase: NSManagedObject {
             if updatedAt == nil || now.timeIntervalSince(updatedAt!) > 1.0 {
                 updatedAt = now
             }
+        }
 
-            if isLogicalDeleted {
-                if logicalDeletedAt == nil {
-                    logicalDeletedAt = now
-                }
+        if isLogicalDeleted {
+            if logicalDeletedAt == nil {
+                logicalDeletedAt = now
             }
-            else {
-                if logicalDeletedAt != nil {
-                    logicalDeletedAt = nil
-                }
+        }
+        else {
+            if logicalDeletedAt != nil {
+                logicalDeletedAt = nil
             }
         }
     }
