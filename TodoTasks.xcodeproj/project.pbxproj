@@ -99,10 +99,10 @@
 		6983FC4D2335C2C5004FBF57 /* TodoTasks */ = {
 			isa = PBXGroup;
 			children = (
-				693B74AE23499014001FFB29 /* Controllers */,
-				6977F8932335EE8D004418FC /* Models */,
 				6983FC4E2335C2C5004FBF57 /* AppDelegate.swift */,
 				6983FC522335C2C5004FBF57 /* Document.swift */,
+				693B74AE23499014001FFB29 /* Controllers */,
+				6977F8932335EE8D004418FC /* Models */,
 				693B74AF2349980F001FFB29 /* Resources */,
 			);
 			path = TodoTasks;
