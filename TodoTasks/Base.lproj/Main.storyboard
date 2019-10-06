@@ -867,10 +867,10 @@
             </objects>
             <point key="canvasLocation" x="745" y="494"/>
         </scene>
-        <!--View Controller-->
+        <!--Content View Controller-->
         <scene sceneID="GyP-EB-qRa">
             <objects>
-                <viewController id="rzT-5J-BTW" sceneMemberID="viewController">
+                <viewController id="rzT-5J-BTW" customClass="ContentViewController" customModule="TodoTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yVK-BL-OeA">
                         <rect key="frame" x="0.0" y="0.0" width="280" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
