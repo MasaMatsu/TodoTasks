@@ -33,6 +33,11 @@ public class EntityBase: NSManagedObject {
                     logicalDeletedAt = now
                 }
             }
+            else {
+                if logicalDeletedAt != nil {
+                    logicalDeletedAt = nil
+                }
+            }
         }
     }
 
