@@ -1,7 +1,7 @@
 //
 //  ContentView.swift
 //  TodoTasks
-//  
+//
 //  Copyright © 2019 MasaMatsu. All rights reserved.
 //
 
