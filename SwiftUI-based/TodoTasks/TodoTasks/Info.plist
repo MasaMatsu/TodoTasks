@@ -29,8 +29,6 @@
 			<false/>
 			<key>NSDocumentClass</key>
 			<string>$(PRODUCT_MODULE_NAME).Document</string>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
