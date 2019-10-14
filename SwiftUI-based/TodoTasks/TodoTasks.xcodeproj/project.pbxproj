@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69343F482354C61A00E73DD0 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69343F442354C61A00E73DD0 /* Task+CoreDataClass.swift */; };
+		69343F492354C61A00E73DD0 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69343F452354C61A00E73DD0 /* Task+CoreDataProperties.swift */; };
+		69343F4A2354C61A00E73DD0 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69343F462354C61A00E73DD0 /* Category+CoreDataClass.swift */; };
+		69343F4B2354C61A00E73DD0 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69343F472354C61A00E73DD0 /* Category+CoreDataProperties.swift */; };
+		69343F4D2354C63A00E73DD0 /* EntityBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69343F4C2354C63A00E73DD0 /* EntityBase.swift */; };
 		698B46F123547944003AE858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B46F023547944003AE858 /* AppDelegate.swift */; };
 		698B46F323547944003AE858 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B46F223547944003AE858 /* Document.swift */; };
 		698B46F523547944003AE858 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B46F423547944003AE858 /* MainView.swift */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69343F442354C61A00E73DD0 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69343F452354C61A00E73DD0 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		69343F462354C61A00E73DD0 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69343F472354C61A00E73DD0 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		69343F4C2354C63A00E73DD0 /* EntityBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityBase.swift; sourceTree = "<group>"; };
 		698B46ED23547944003AE858 /* TodoTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698B46F023547944003AE858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		698B46F223547944003AE858 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -40,6 +50,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69343F432354C5F200E73DD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				69343F4C2354C63A00E73DD0 /* EntityBase.swift */,
+				69343F442354C61A00E73DD0 /* Task+CoreDataClass.swift */,
+				69343F452354C61A00E73DD0 /* Task+CoreDataProperties.swift */,
+				69343F462354C61A00E73DD0 /* Category+CoreDataClass.swift */,
+				69343F472354C61A00E73DD0 /* Category+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		698B46E423547944003AE858 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +84,7 @@
 				698B46F023547944003AE858 /* AppDelegate.swift */,
 				698B46F223547944003AE858 /* Document.swift */,
 				69A8A66023547F510001A701 /* Views */,
+				69343F432354C5F200E73DD0 /* Models */,
 				698B46F923547945003AE858 /* Assets.xcassets */,
 				698B46FE23547945003AE858 /* Main.storyboard */,
 				698B470123547945003AE858 /* Info.plist */,
@@ -160,9 +183,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				698B46F823547944003AE858 /* Document.xcdatamodeld in Sources */,
+				69343F4D2354C63A00E73DD0 /* EntityBase.swift in Sources */,
+				69343F482354C61A00E73DD0 /* Task+CoreDataClass.swift in Sources */,
+				69343F4A2354C61A00E73DD0 /* Category+CoreDataClass.swift in Sources */,
 				698B46F323547944003AE858 /* Document.swift in Sources */,
 				698B46F123547944003AE858 /* AppDelegate.swift in Sources */,
+				69343F492354C61A00E73DD0 /* Task+CoreDataProperties.swift in Sources */,
 				698B46F523547944003AE858 /* MainView.swift in Sources */,
+				69343F4B2354C61A00E73DD0 /* Category+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
