@@ -61,7 +61,7 @@
 			children = (
 				698B46F023547944003AE858 /* AppDelegate.swift */,
 				698B46F223547944003AE858 /* Document.swift */,
-				698B46F423547944003AE858 /* ContentView.swift */,
+				69A8A66023547F510001A701 /* Views */,
 				698B46F923547945003AE858 /* Assets.xcassets */,
 				698B46FE23547945003AE858 /* Main.storyboard */,
 				698B470123547945003AE858 /* Info.plist */,
@@ -78,6 +78,14 @@
 				698B46FC23547945003AE858 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		69A8A66023547F510001A701 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				698B46F423547944003AE858 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
