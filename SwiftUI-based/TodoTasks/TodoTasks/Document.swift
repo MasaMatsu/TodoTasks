@@ -21,8 +21,8 @@ class Document: NSPersistentDocument {
     override func makeWindowControllers() {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let contentView =
-            ContentView()
+        let view =
+            MainView()
             .environment(
                 \.managedObjectContext,
                 self.managedObjectContext!
@@ -45,7 +45,7 @@ class Document: NSPersistentDocument {
             defer: false
         )
         window.center()
-        window.contentView = NSHostingView(rootView: contentView)
+        window.contentView = NSHostingView(rootView: view)
         let windowController = NSWindowController(window: window)
         self.addWindowController(windowController)
     }
