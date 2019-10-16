@@ -21,6 +21,21 @@ class Document: NSPersistentDocument {
         return true
     }
 
+    override func configurePersistentStoreCoordinator(
+        for url: URL,
+        ofType fileType: String,
+        modelConfiguration configuration: String?,
+        storeOptions: [String : Any]? = nil
+    ) throws {
+        let options = [NSSQLitePragmasOption: ["journal_mode" : "DELETE"]]
+        return try super.configurePersistentStoreCoordinator(
+            for: url,
+            ofType: fileType,
+            modelConfiguration: configuration,
+            storeOptions: options
+        )
+    }
+
     override func makeWindowControllers() {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
