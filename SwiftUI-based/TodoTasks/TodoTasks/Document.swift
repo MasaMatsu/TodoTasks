@@ -11,11 +11,29 @@ import SwiftUI
 class Document: NSPersistentDocument {
     override init() {
         super.init()
-        // Add your subclass-specific initialization here.
+
+        let ctx = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        ctx.persistentStoreCoordinator = managedObjectContext?.persistentStoreCoordinator
+        managedObjectContext = ctx
     }
 
     override class var autosavesInPlace: Bool {
         return true
+    }
+
+    override func configurePersistentStoreCoordinator(
+        for url: URL,
+        ofType fileType: String,
+        modelConfiguration configuration: String?,
+        storeOptions: [String : Any]? = nil
+    ) throws {
+        let options = [NSSQLitePragmasOption: ["journal_mode" : "DELETE"]]
+        return try super.configurePersistentStoreCoordinator(
+            for: url,
+            ofType: fileType,
+            modelConfiguration: configuration,
+            storeOptions: options
+        )
     }
 
     override func makeWindowControllers() {
@@ -48,5 +66,13 @@ class Document: NSPersistentDocument {
         window.contentView = NSHostingView(rootView: view)
         let windowController = NSWindowController(window: window)
         self.addWindowController(windowController)
+    }
+}
+
+extension NSManagedObjectContext {
+    func child() -> NSManagedObjectContext {
+        let child = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        child.parent = self
+        return child
     }
 }
