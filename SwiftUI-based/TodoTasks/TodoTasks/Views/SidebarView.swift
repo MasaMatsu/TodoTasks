@@ -22,6 +22,14 @@ struct SidebarView: View {
                     Text("Category Name3")
                 }
             }
+
+            Spacer()
+
+            Button(action: {
+            }) {
+                Image(nsImage: NSImage(named: NSImage.addTemplateName)!)
+                Text("Add Category")
+            }
         }
     }
 }
