@@ -30,6 +30,8 @@ struct SidebarView: View {
                 Image(nsImage: NSImage(named: NSImage.addTemplateName)!)
                 Text("Add Category")
             }
+            .buttonStyle(BorderlessButtonStyle())
+            .padding([.leading, .bottom], 10)
         }
     }
 }
