@@ -33,6 +33,8 @@ struct SidebarView: View {
             .buttonStyle(BorderlessButtonStyle())
             .padding([.leading, .bottom], 10)
         }
+        .listStyle(SidebarListStyle())
+        .frame(minWidth: 150, maxWidth: 300)
     }
 }
 
