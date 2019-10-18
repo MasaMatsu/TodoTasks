@@ -68,3 +68,11 @@ class Document: NSPersistentDocument {
         self.addWindowController(windowController)
     }
 }
+
+extension NSManagedObjectContext {
+    func child() -> NSManagedObjectContext {
+        let child = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        child.parent = self
+        return child
+    }
+}
