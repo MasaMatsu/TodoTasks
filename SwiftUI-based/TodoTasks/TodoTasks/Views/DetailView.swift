@@ -11,8 +11,11 @@ struct DetailView: View {
     var body: some View {
         VStack(alignment: .leading) {
             // TODO: Coding
-            Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            List {
+                TaskRowView()
+                TaskRowView()
+                TaskRowView()
+            }
 
             HStack {
                 Button(action: {
