@@ -9,7 +9,21 @@ import SwiftUI
 
 struct TaskRowView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            // TODO: Coding
+            VStack(alignment: .leading) {
+                Text("Task Name")
+                Text("2019/10/20 12:00")
+            }
+
+            Spacer()
+
+            Button(action: {
+            }) {
+                Image(nsImage: NSImage(named: NSImage.touchBarGetInfoTemplateName)!)
+            }
+            .buttonStyle(BorderlessButtonStyle())
+        }
     }
 }
 
