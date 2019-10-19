@@ -11,6 +11,17 @@ struct DetailView: View {
     var body: some View {
         VStack(alignment: .leading) {
             // TODO: Coding
+            HStack {
+                Text("Category Name")
+                .font(.title)
+
+                Spacer()
+
+                Text("3")
+                .font(.title)
+            }
+            .padding(8)
+
             List {
                 TaskRowView()
                 TaskRowView()
