@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct TaskInfoView: View {
+    @State private var taskName = ""
+    @State private var limit = Date()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            TextField("Title", text: $taskName)
+            .font(.body)
+            .textFieldStyle(PlainTextFieldStyle())
+
+            Divider()
+
+            DatePicker(
+                selection: $limit,
+                displayedComponents: [.date, .hourAndMinute]
+            ) {
+                Text("Limit:")
+            }
+        }
+        .padding()
     }
 }
 
