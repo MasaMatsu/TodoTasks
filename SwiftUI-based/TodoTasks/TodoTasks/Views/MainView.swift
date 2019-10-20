@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+
     var body: some View {
         NavigationView {
             SidebarView()
