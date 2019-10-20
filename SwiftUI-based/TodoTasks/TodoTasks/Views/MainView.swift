@@ -14,7 +14,33 @@ struct MainView: View {
 
     var body: some View {
         NavigationView {
-            SidebarView()
+            VStack(alignment: .leading) {
+                List {
+                    // TODO: Coding
+                    NavigationLink(destination: DetailView()) {
+                        Text("Category Name1")
+                    }
+                    NavigationLink(destination: DetailView()) {
+                        Text("Category Name2")
+                    }
+                    NavigationLink(destination: DetailView()) {
+                        Text("Category Name3")
+                    }
+                }
+
+                Spacer()
+
+                Button(action: {
+                }) {
+                    Image(nsImage: NSImage(named: NSImage.addTemplateName)!)
+                    Text("Add Category")
+                }
+                .buttonStyle(BorderlessButtonStyle())
+                .padding([.leading, .bottom], 10)
+            }
+            .listStyle(SidebarListStyle())
+            .frame(minWidth: 150, maxWidth: 300)
+
             DetailView()
         }
     }
