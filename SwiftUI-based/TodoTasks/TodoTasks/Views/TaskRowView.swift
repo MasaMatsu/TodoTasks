@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TaskRowView: View {
+    @State var isPresentedPopover = false
+
     var body: some View {
         HStack {
             // TODO: Coding
@@ -19,10 +21,15 @@ struct TaskRowView: View {
             Spacer()
 
             Button(action: {
+                self.isPresentedPopover = true
             }) {
                 Image(nsImage: NSImage(named: NSImage.touchBarGetInfoTemplateName)!)
             }
             .buttonStyle(BorderlessButtonStyle())
+        }
+        .popover(isPresented: $isPresentedPopover, arrowEdge: .trailing) {
+            TaskInfoView()
+            .frame(width: 300)
         }
     }
 }
