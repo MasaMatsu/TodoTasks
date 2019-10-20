@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 @objc(EntityBase)
-public class EntityBase: NSManagedObject {
+public class EntityBase: NSManagedObject, Identifiable {
     @NSManaged public var createdAt: Date?
     @NSManaged public var updatedAt: Date?
     @NSManaged public var logicalDeletedAt: Date?
