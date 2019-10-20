@@ -41,6 +41,7 @@ class Document: NSPersistentDocument {
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         let view =
             MainView()
+            .frame(minWidth: 480, minHeight: 300)
             .environment(
                 \.managedObjectContext,
                 self.managedObjectContext!
