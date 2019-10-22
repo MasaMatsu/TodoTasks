@@ -32,6 +32,20 @@ struct TaskInfoView: View {
         }
         .padding()
     }
+
+    func editTask() {
+        let context = self.managedObjectContext.child()
+        context.perform {
+            let changedTask = context.object(with: self.task.objectID) as! Task
+            changedTask.name = self.$taskName.wrappedValue
+            changedTask.limit = self.$limit.wrappedValue
+            do {
+                try context.save()
+            } catch {
+                print("TaskInfoView: Raise error on editTask")
+            }
+        }
+    }
 }
 
 struct TaskInfoView_Previews: PreviewProvider {
