@@ -69,14 +69,6 @@ struct MainView: View {
         context.perform {
             let category = Category(context: context)
             category.name = "Untitled \(self.categories.count + 1)"
-
-            // TODO: Remove this task logic
-            let task = Task(context: context)
-            task.name = "Untitled Task"
-            task.limit = Date()
-
-            category.addToTasks(task)
-
             do {
                 try context.save()
             } catch {
