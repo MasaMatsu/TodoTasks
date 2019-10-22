@@ -30,6 +30,7 @@ struct TaskInfoView: View {
                 Text("Limit:")
             }
         }
+        .onDisappear(perform: editTask) // This is not called only popover of macOS.
         .padding()
     }
 
