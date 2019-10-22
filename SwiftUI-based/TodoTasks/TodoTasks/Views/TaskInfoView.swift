@@ -14,58 +14,29 @@ class TaskInfoViewModel: ObservableObject {
 }
 
 struct TaskInfoView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
-
-    @EnvironmentObject var task: Task
-
-    @State var taskName: String
-    @State var limit: Date
+    @ObservedObject var viewModel: TaskInfoViewModel
 
     var body: some View {
         VStack(alignment: .leading) {
-            TextField("Title", text: $taskName)
+            TextField("Title", text: $viewModel.taskName)
             .font(.body)
             .textFieldStyle(PlainTextFieldStyle())
 
             Divider()
 
             DatePicker(
-                selection: $limit,
+                selection: $viewModel.limit,
                 displayedComponents: [.date, .hourAndMinute]
             ) {
                 Text("Limit:")
             }
-
-            HStack {
-                Spacer()
-
-                // This is replacement of onDisappear
-                Button(action: editTask) {
-                    Text("Done")
-                }
-            }
         }
-        .onDisappear(perform: editTask) // This is not called only popover of macOS.
         .padding()
-    }
-
-    func editTask() {
-        let context = self.managedObjectContext.child()
-        context.perform {
-            let changedTask = context.object(with: self.task.objectID) as! Task
-            changedTask.name = self.$taskName.wrappedValue
-            changedTask.limit = self.$limit.wrappedValue
-            do {
-                try context.save()
-            } catch {
-                print("TaskInfoView: Raise error on editTask")
-            }
-        }
     }
 }
 
 struct TaskInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskInfoView(taskName: "Untitled", limit: Date())
+        TaskInfoView(viewModel: TaskInfoViewModel())
     }
 }

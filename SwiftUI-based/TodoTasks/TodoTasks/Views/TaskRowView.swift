@@ -12,6 +12,8 @@ struct TaskRowView: View {
 
     @State private var isPresentedPopover = false
 
+    @ObservedObject var viewModel = TaskInfoViewModel()
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -28,7 +30,7 @@ struct TaskRowView: View {
             .buttonStyle(BorderlessButtonStyle())
         }
         .popover(isPresented: $isPresentedPopover, arrowEdge: .trailing) {
-            TaskInfoView(taskName: self.task.name!, limit: self.task.limit!)
+            TaskInfoView(viewModel: self.viewModel)
             .frame(width: 300)
         }
     }
