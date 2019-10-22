@@ -12,8 +12,8 @@ struct TaskInfoView: View {
 
     @EnvironmentObject var task: Task
 
-    @State private var taskName = ""
-    @State private var limit = Date()
+    @State var taskName: String
+    @State var limit: Date
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -36,6 +36,6 @@ struct TaskInfoView: View {
 
 struct TaskInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskInfoView()
+        TaskInfoView(taskName: "Untitled", limit: Date())
     }
 }

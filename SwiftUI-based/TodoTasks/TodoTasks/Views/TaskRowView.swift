@@ -28,7 +28,7 @@ struct TaskRowView: View {
             .buttonStyle(BorderlessButtonStyle())
         }
         .popover(isPresented: $isPresentedPopover, arrowEdge: .trailing) {
-            TaskInfoView()
+            TaskInfoView(taskName: self.task.name!, limit: self.task.limit!)
             .frame(width: 300)
         }
     }
