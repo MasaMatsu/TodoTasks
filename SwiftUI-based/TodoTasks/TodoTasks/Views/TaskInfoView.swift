@@ -5,7 +5,13 @@
 // Copyright © 2019 MasaMatsu. All rights reserved.
 //
 
+import Combine
 import SwiftUI
+
+class TaskInfoViewModel: ObservableObject {
+    @Published var taskName = ""
+    @Published var limit = Date()
+}
 
 struct TaskInfoView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
