@@ -17,7 +17,10 @@ struct MainView: View {
             VStack(alignment: .leading) {
                 List(categories) { category in
                     NavigationLink(destination: DetailView().environmentObject(category)) {
-                        Text(category.name!)
+                        CategoryRowView(
+                            category: category,
+                            viewModel: CategoryRowViewModel(name: category.name!)
+                        )
                     }
                 }
 
