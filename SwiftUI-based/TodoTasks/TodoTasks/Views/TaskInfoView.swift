@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TaskInfoView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+
     @EnvironmentObject var task: Task
 
     @State private var taskName = ""
