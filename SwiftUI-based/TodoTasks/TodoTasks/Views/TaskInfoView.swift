@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TaskInfoView: View {
+    @EnvironmentObject var task: Task
+
     @State private var taskName = ""
     @State private var limit = Date()
 
