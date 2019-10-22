@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+
     @EnvironmentObject var category: Category
 
     @State private var isPresentedSheet = false
@@ -53,6 +55,25 @@ struct DetailView: View {
             .sheet(isPresented: $isPresentedSheet) {
                 TaskAddView(viewModel: self.viewModel)
                 .frame(width: 300)
+            }
+        }
+        .onReceive(viewModel.objectWillChange, perform: self.addTask)
+    }
+
+    func addTask() {
+        let context = self.managedObjectContext.child()
+        context.perform {
+            let category = context.object(with: self.category.objectID) as! Category
+
+            let task = Task(context: context)
+            task.name = self.viewModel.taskName
+            task.limit = self.viewModel.limit
+            category.addToTasks(task)
+
+            do {
+                try context.save()
+            } catch {
+                print("DetailView: Raise error on addTask")
             }
         }
     }
