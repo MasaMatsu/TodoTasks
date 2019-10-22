@@ -30,6 +30,11 @@ struct TaskRowView: View {
                 Text(self.task.name!)
                 Text("\(self.task.limit!, formatter: self.dateFormatter)")
             }
+            .contextMenu {
+                Button(action: self.removeTask) {
+                    Text("Remove")
+                }
+            }
 
             Spacer()
 
@@ -61,6 +66,19 @@ struct TaskRowView: View {
             }
             catch {
                 print("TaskRowView: Raise error on onReceive")
+            }
+        }
+    }
+
+    func removeTask() {
+        let context = self.managedObjectContext.child()
+        context.perform {
+            let task = context.object(with: self.task.objectID) as! Task
+            task.deletePhysically()
+            do {
+                try context.save()
+            } catch {
+                print("DetailView: Raise error on removeTask")
             }
         }
     }
