@@ -15,16 +15,9 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                List {
-                    // TODO: Coding
+                List(categories) { category in
                     NavigationLink(destination: DetailView()) {
-                        Text("Category Name1")
-                    }
-                    NavigationLink(destination: DetailView()) {
-                        Text("Category Name2")
-                    }
-                    NavigationLink(destination: DetailView()) {
-                        Text("Category Name3")
+                        Text(category.name!)
                     }
                 }
 
