@@ -16,6 +16,16 @@ struct MainView: View {
             DetailView()
         }
     }
+
+    // TODO: Separate logic from view
+    static func categoriesFetchRequest() -> NSFetchRequest<Category> {
+        let request: NSFetchRequest<Category> = Category.fetchRequest()
+        request.predicate = NSPredicate(format: "isLogicalDeleted == false")
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Category.createdAt, ascending: true)
+        ]
+        return request
+    }
 }
 
 struct MainView_Previews: PreviewProvider {
