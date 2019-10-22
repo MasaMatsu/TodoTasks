@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
 
+    @FetchRequest(fetchRequest: categoriesFetchRequest()) var categories: FetchedResults<Category>
+
     var body: some View {
         NavigationView {
             SidebarView()
