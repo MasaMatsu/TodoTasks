@@ -12,7 +12,7 @@ struct DetailView: View {
 
     @EnvironmentObject var category: Category
 
-    @State private var isPresentedSheet = false
+    @State private var isPresentedPopover = false
 
     @ObservedObject(initialValue: TaskAddViewModel()) var viewModel: TaskAddViewModel
 
@@ -41,18 +41,18 @@ struct DetailView: View {
 
             HStack {
                 Button(action: {
-                    self.isPresentedSheet = true
+                    self.isPresentedPopover = true
                 }) {
                     Image(nsImage: NSImage(named: NSImage.addTemplateName)!)
+                }
+                .popover(isPresented: $isPresentedPopover, arrowEdge: .top) {
+                    TaskAddView(viewModel: self.viewModel)
+                    .frame(width: 300)
                 }
 
                 Spacer()
             }
             .padding([.leading, .bottom], 10)
-            .sheet(isPresented: $isPresentedSheet) {
-                TaskAddView(viewModel: self.viewModel)
-                .frame(width: 300)
-            }
         }
         .onReceive(viewModel.objectWillChange, perform: self.addTask)
     }
