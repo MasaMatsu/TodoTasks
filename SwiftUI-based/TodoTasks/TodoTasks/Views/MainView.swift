@@ -34,7 +34,9 @@ struct MainView: View {
             .listStyle(SidebarListStyle())
             .frame(minWidth: 150, maxWidth: 300)
 
-            DetailView()
+            // TODO: Create empty detail view
+            Text("Dummy")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 
