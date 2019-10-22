@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TaskRowView: View {
+    @EnvironmentObject var task: Task
+
     @State var isPresentedPopover = false
 
     var body: some View {
