@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
+    @EnvironmentObject var category: Category
+
     var body: some View {
         VStack(alignment: .leading) {
             // TODO: Coding
