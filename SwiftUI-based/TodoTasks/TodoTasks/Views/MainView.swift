@@ -45,7 +45,13 @@ struct MainView: View {
 
             // TODO: Create empty detail view
             if self.categories.isEmpty {
-                Text("Dummy")
+                VStack(alignment: .center) {
+                    Text("No Category")
+                    .font(.title)
+                    Button(action: self.addCategory) {
+                        Text("Add Category")
+                    }
+                }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 DetailView().environmentObject(self.categories.first!)
