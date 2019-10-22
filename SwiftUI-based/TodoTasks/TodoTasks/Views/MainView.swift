@@ -23,8 +23,7 @@ struct MainView: View {
 
                 Spacer()
 
-                Button(action: {
-                }) {
+                Button(action: addCategory) {
                     Image(nsImage: NSImage(named: NSImage.addTemplateName)!)
                     Text("Add Category")
                 }
