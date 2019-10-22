@@ -10,6 +10,10 @@ import SwiftUI
 struct DetailView: View {
     @EnvironmentObject var category: Category
 
+    @State private var isPresentedSheet = false
+
+    @ObservedObject(initialValue: TaskAddViewModel()) var viewModel: TaskAddViewModel
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -35,6 +39,7 @@ struct DetailView: View {
 
             HStack {
                 Button(action: {
+                    self.isPresentedSheet = true
                 }) {
                     Image(nsImage: NSImage(named: NSImage.addTemplateName)!)
                 }
@@ -45,6 +50,10 @@ struct DetailView: View {
                 Spacer()
             }
             .padding([.leading, .bottom], 10)
+            .sheet(isPresented: $isPresentedSheet) {
+                TaskAddView(viewModel: self.viewModel)
+                .frame(width: 300)
+            }
         }
     }
 }
