@@ -45,10 +45,7 @@ struct DetailView: View {
                 }) {
                     Image(nsImage: NSImage(named: NSImage.addTemplateName)!)
                 }
-                Button(action: {
-                }) {
-                    Image(nsImage: NSImage(named: NSImage.removeTemplateName)!)
-                }
+
                 Spacer()
             }
             .padding([.leading, .bottom], 10)
