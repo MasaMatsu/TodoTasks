@@ -23,9 +23,12 @@ struct DetailView: View {
             }
             .padding(8)
 
-            List {
-                TaskRowView()
-                TaskRowView()
+            List(
+                self.category.tasks?
+                .sortedArray(using: [
+                    NSSortDescriptor(keyPath: \Task.createdAt, ascending: true)
+                ]) as! [Task]
+            ) { task in
                 TaskRowView()
             }
 
