@@ -22,6 +22,13 @@ struct MainView: View {
                             viewModel: CategoryRowViewModel(name: category.name!)
                         )
                     }
+                    .contextMenu {
+                        Button(action: {
+                            self.removeCategory(category: category)
+                        }) {
+                            Text("Remove")
+                        }
+                    }
                 }
 
                 Spacer()
@@ -74,6 +81,19 @@ struct MainView: View {
                 try context.save()
             } catch {
                 print("MainView: Raise error on addCategory")
+            }
+        }
+    }
+
+    func removeCategory(category: Category) {
+        let context = self.managedObjectContext.child()
+        context.perform {
+            let deletedCategory = context.object(with: category.objectID) as! Category
+            deletedCategory.deletePhysically()
+            do {
+                try context.save()
+            } catch {
+                print("MainView: Raise error on removeCategory")
             }
         }
     }
