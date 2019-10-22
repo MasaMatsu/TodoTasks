@@ -14,10 +14,9 @@ struct TaskRowView: View {
 
     var body: some View {
         HStack {
-            // TODO: Coding
             VStack(alignment: .leading) {
-                Text("Task Name")
-                Text("2019/10/20 12:00")
+                Text(self.task.name!)
+                Text("\(self.task.limit!)") // TODO: Set DateFormatter
             }
 
             Spacer()
