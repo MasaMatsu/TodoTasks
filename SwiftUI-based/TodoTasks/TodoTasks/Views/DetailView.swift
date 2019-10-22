@@ -19,12 +19,12 @@ struct DetailView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(self.category.name!)
+                Text(self.category.name ?? "")
                 .font(.title)
 
                 Spacer()
 
-                Text("\(self.category.tasks!.count)")
+                Text("\(self.category.tasks?.count ?? 0)")
                 .font(.title)
             }
             .padding(8)
