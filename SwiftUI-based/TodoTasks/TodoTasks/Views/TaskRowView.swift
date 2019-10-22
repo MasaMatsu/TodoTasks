@@ -10,7 +10,7 @@ import SwiftUI
 struct TaskRowView: View {
     @EnvironmentObject var task: Task
 
-    @State var isPresentedPopover = false
+    @State private var isPresentedPopover = false
 
     var body: some View {
         HStack {
