@@ -13,6 +13,7 @@
 		69343F4B2354C61A00E73DD0 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69343F472354C61A00E73DD0 /* Category+CoreDataProperties.swift */; };
 		69343F4D2354C63A00E73DD0 /* EntityBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69343F4C2354C63A00E73DD0 /* EntityBase.swift */; };
 		697243BC235F00BE00ECEAD3 /* TaskAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697243BB235F00BE00ECEAD3 /* TaskAddView.swift */; };
+		697243BE235F097D00ECEAD3 /* CategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697243BD235F097D00ECEAD3 /* CategoryRowView.swift */; };
 		697831C3235A026500367D91 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697831C2235A026500367D91 /* DetailView.swift */; };
 		697831C5235B234700367D91 /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697831C4235B234700367D91 /* TaskRowView.swift */; };
 		698B46F123547944003AE858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B46F023547944003AE858 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 		69343F472354C61A00E73DD0 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		69343F4C2354C63A00E73DD0 /* EntityBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityBase.swift; sourceTree = "<group>"; };
 		697243BB235F00BE00ECEAD3 /* TaskAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAddView.swift; sourceTree = "<group>"; };
+		697243BD235F097D00ECEAD3 /* CategoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowView.swift; sourceTree = "<group>"; };
 		697831C2235A026500367D91 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		697831C4235B234700367D91 /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 		698B46ED23547944003AE858 /* TodoTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				697831C4235B234700367D91 /* TaskRowView.swift */,
 				698E9D3D235B57E600D3085D /* TaskInfoView.swift */,
 				697243BB235F00BE00ECEAD3 /* TaskAddView.swift */,
+				697243BD235F097D00ECEAD3 /* CategoryRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				69343F492354C61A00E73DD0 /* Task+CoreDataProperties.swift in Sources */,
 				698B46F523547944003AE858 /* MainView.swift in Sources */,
 				697831C5235B234700367D91 /* TaskRowView.swift in Sources */,
+				697243BE235F097D00ECEAD3 /* CategoryRowView.swift in Sources */,
 				69343F4B2354C61A00E73DD0 /* Category+CoreDataProperties.swift in Sources */,
 				697243BC235F00BE00ECEAD3 /* TaskAddView.swift in Sources */,
 			);
