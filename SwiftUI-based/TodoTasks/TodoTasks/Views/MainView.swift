@@ -34,8 +34,12 @@ struct MainView: View {
             .frame(minWidth: 150, maxWidth: 300)
 
             // TODO: Create empty detail view
-            Text("Dummy")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            if self.categories.isEmpty {
+                Text("Dummy")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                DetailView().environmentObject(self.categories.first!)
+            }
         }
     }
 
