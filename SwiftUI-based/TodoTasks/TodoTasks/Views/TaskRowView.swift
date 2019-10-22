@@ -16,11 +16,19 @@ struct TaskRowView: View {
 
     @ObservedObject var viewModel = TaskInfoViewModel()
 
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter
+    }()
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 Text(self.task.name!)
-                Text("\(self.task.limit!)") // TODO: Set DateFormatter
+                Text("\(self.task.limit!, formatter: self.dateFormatter)")
             }
 
             Spacer()
