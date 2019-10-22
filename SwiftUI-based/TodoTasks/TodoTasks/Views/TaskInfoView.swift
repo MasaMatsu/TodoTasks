@@ -29,6 +29,15 @@ struct TaskInfoView: View {
             ) {
                 Text("Limit:")
             }
+
+            HStack {
+                Spacer()
+
+                // This is replacement of onDisappear
+                Button(action: editTask) {
+                    Text("Done")
+                }
+            }
         }
         .onDisappear(perform: editTask) // This is not called only popover of macOS.
         .padding()
