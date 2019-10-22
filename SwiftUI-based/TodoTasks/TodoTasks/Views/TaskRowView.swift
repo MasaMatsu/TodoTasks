@@ -21,11 +21,10 @@ struct TaskRowView: View {
 
             Spacer()
 
-            Button(action: {
-                self.isPresentedPopover = true
-            }) {
-                Image(nsImage: NSImage(named: NSImage.touchBarGetInfoTemplateName)!)
-            }
+            PresentationButton(
+                isPresented: $isPresentedPopover,
+                imageName: NSImage.touchBarGetInfoTemplateName
+            )
             .buttonStyle(BorderlessButtonStyle())
         }
         .popover(isPresented: $isPresentedPopover, arrowEdge: .trailing) {
