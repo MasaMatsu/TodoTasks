@@ -30,6 +30,7 @@ struct DetailView: View {
                 ]) as! [Task]
             ) { task in
                 TaskRowView()
+                .environmentObject(task)
             }
 
             HStack {
