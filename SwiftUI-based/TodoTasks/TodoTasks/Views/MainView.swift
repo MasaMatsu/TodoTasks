@@ -49,6 +49,20 @@ struct MainView: View {
         ]
         return request
     }
+
+    // TODO: Separate logic from view
+    func addCategory() {
+        let context = self.managedObjectContext.child()
+        context.perform {
+            let category = Category(context: context)
+            category.name = "Untitled \(self.categories.count + 1)"
+            do {
+                try context.save()
+            } catch {
+                print("MainView: Raise error on addCategory")
+            }
+        }
+    }
 }
 
 struct MainView_Previews: PreviewProvider {
