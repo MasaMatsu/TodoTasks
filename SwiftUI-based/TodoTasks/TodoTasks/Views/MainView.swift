@@ -8,10 +8,91 @@
 import SwiftUI
 
 struct MainView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    @FetchRequest(fetchRequest: categoriesFetchRequest()) var categories: FetchedResults<Category>
+
     var body: some View {
         NavigationView {
-            SidebarView()
-            DetailView()
+            VStack(alignment: .leading) {
+                List(categories) { category in
+                    NavigationLink(destination: DetailView().environmentObject(category)) {
+                        CategoryRowView(
+                            category: category,
+                            viewModel: CategoryRowViewModel(name: category.name!)
+                        )
+                    }
+                    .contextMenu {
+                        Button(action: {
+                            self.removeCategory(category: category)
+                        }) {
+                            Text("Remove")
+                        }
+                    }
+                }
+
+                Spacer()
+
+                Button(action: addCategory) {
+                    Image(nsImage: NSImage(named: NSImage.addTemplateName)!)
+                    Text("Add Category")
+                }
+                .buttonStyle(BorderlessButtonStyle())
+                .padding([.leading, .bottom], 10)
+            }
+            .listStyle(SidebarListStyle())
+            .frame(minWidth: 150, maxWidth: 300)
+
+            // TODO: Create empty detail view
+            if self.categories.isEmpty {
+                VStack(alignment: .center) {
+                    Text("No Category")
+                    .font(.title)
+                    Button(action: self.addCategory) {
+                        Text("Add Category")
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                DetailView().environmentObject(self.categories.first!)
+            }
+        }
+    }
+
+    // TODO: Separate logic from view
+    static func categoriesFetchRequest() -> NSFetchRequest<Category> {
+        let request: NSFetchRequest<Category> = Category.fetchRequest()
+        request.predicate = NSPredicate(format: "isLogicalDeleted == false")
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Category.createdAt, ascending: true)
+        ]
+        return request
+    }
+
+    // TODO: Separate logic from view
+    func addCategory() {
+        let context = self.managedObjectContext.child()
+        context.perform {
+            let category = Category(context: context)
+            category.name = "Untitled \(self.categories.count + 1)"
+            do {
+                try context.save()
+            } catch {
+                print("MainView: Raise error on addCategory")
+            }
+        }
+    }
+
+    func removeCategory(category: Category) {
+        let context = self.managedObjectContext.child()
+        context.perform {
+            let deletedCategory = context.object(with: category.objectID) as! Category
+            deletedCategory.deletePhysically()
+            do {
+                try context.save()
+            } catch {
+                print("MainView: Raise error on removeCategory")
+            }
         }
     }
 }
